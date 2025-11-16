@@ -1,4 +1,3 @@
-import Counter from "@/components/Counter";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 
@@ -10,9 +9,6 @@ export default function HomePage() {
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
-      </div>
-      <div>
-        <Counter />
       </div>
     </div>
   );
