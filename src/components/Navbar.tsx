@@ -7,7 +7,7 @@ export default function Navbar() {
   const totalItems = useCartStore((state) => state.totalItems);
 
   return (
-    <header className="border-b bg-white">
+    <header className="border-b">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <div className="text-xl font-bold">
           <Link href="/">MyShop</Link>

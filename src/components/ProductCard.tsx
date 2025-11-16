@@ -9,7 +9,7 @@ export default function ProductCard({ product }: { product: Product }) {
   const addItem = useCartStore((state) => state.addItem);
 
   return (
-    <div className="flex flex-col rounded-lg border bg-white p-4 shadow-sm">
+    <div className="flex flex-col rounded-lg border bg-background p-4 shadow-sm">
       <div className="relative mb-4 h-40 w-full overflow-hidden rounded-md bg-gray-100">
         <Image
           src={product.image}

@@ -35,7 +35,7 @@ export default function CartPage() {
         {items.map((item) => (
           <div
             key={item.id}
-            className="flex items-center gap-4 rounded-lg border bg-white p-4"
+            className="flex items-center gap-4 rounded-lg border bg-foreground p-4"
           >
             <div className="relative h-16 w-16 overflow-hidden rounded-md bg-gray-100">
               <Image
