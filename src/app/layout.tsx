@@ -4,8 +4,8 @@ import { Header } from "@/features/header";
 import Footer from "@/features/footer";
 
 export const metadata: Metadata = {
-  title: "My Shop",
-  description: "Simple e-commerce demo",
+  title: "JoulesLabs",
+  description: "JoulesLabs - Ecommerce Solutions",
 };
 
 export default function RootLayout({
