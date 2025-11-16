@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import { Header } from "@/features/header";
 import Footer from "@/features/footer";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-background">
-        <Navbar />
+        <Header />
         <main className="mx-auto max-w-7xl min-h-screen px-4 py-8">
           {children}
         </main>

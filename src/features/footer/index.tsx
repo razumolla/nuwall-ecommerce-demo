@@ -21,12 +21,11 @@ const Footer = () => {
             {/* Brand + text + app buttons */}
             <div className="space-y-5">
               <div className="text-3xl font-extrabold tracking-tight">
-                <span className="text-[#FF6A3D]">NuWall</span>
+                <span className="text-[#FF6A3D] italic">JoulesLabs</span>
               </div>
-              <p className="max-w-md text-sm text-slate-200/80">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                libero id et, in gravida. Sit diam duis mauris nulla cursus.
-                Erat et lectus vel ut sollicitudin elit at amet.
+              <p className="max-w-md text-sm text-slate-200/80 text-justify">
+                Joules Labs is a leading provider of innovative and reliable
+                energy solutions for the modern world.
               </p>
 
               {/* App store buttons (simple mock) */}
@@ -106,7 +105,7 @@ const Footer = () => {
       {/* Bottom strip */}
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-4 text-xs text-slate-300/80 md:flex-row md:px-6">
-          <p>© {year} Bonik. All rights reserved.</p>
+          <p>© {year} JoulesLabs. All rights reserved.</p>
           <p>
             Made with <span className="text-red-400">♥</span> by{" "}
             <Link
