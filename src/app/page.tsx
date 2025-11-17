@@ -1,5 +1,6 @@
 import { HeroSection } from "@/features/hero";
 import { FlashDealsSection } from "@/features/home/FlashDealsSection";
+import { RatingsAndBrandsSection } from "@/features/home/RatingsAndBrandsSection";
 import { TopCategoriesSection } from "@/features/home/TopCategoriesSection";
 
 export default function HomePage() {
@@ -8,6 +9,7 @@ export default function HomePage() {
       <HeroSection />
       <FlashDealsSection />
       <TopCategoriesSection />
+      <RatingsAndBrandsSection />
     </div>
   );
 }
