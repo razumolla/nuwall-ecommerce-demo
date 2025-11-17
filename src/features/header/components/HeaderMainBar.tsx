@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, ChevronDown, User, ShoppingBag } from "lucide-react";
+import { Search, ChevronDown, User, ShoppingBag, Heart } from "lucide-react";
 import Link from "next/link";
 
 import {
@@ -91,12 +91,17 @@ export function HeaderMainBar() {
 
         {/* Right small buttons (GC / DB with badge) */}
         <div className="hidden gap-3 lg:flex">
-          <Button
-            variant="ghost"
-            className="flex h-12 w-12 items-center justify-center rounded-md bg-slate-50 text-xs font-semibold text-slate-500"
-          >
-            <User className="h-5 w-5" />
-          </Button>
+          <div className="relative">
+            <Button
+              variant="ghost"
+              className="flex h-12 w-12 items-center justify-center rounded-md bg-slate-50 text-xs font-semibold text-slate-500 "
+            >
+              <Heart className="h-5 w-5" />
+            </Button>
+            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#FF6A3D] text-[10px] font-semibold text-white">
+              3
+            </span>
+          </div>
 
           <div className="relative">
             <Button
@@ -109,6 +114,13 @@ export function HeaderMainBar() {
               3
             </span>
           </div>
+
+          <Button
+            variant="ghost"
+            className="flex h-12 w-12 items-center justify-center rounded-md bg-slate-50 text-xs font-semibold text-slate-500"
+          >
+            <User className="h-5 w-5" />
+          </Button>
         </div>
       </div>
     </div>
