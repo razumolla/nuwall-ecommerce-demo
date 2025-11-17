@@ -9,7 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { ZapIcon } from "lucide-react";
+import { ArrowRightIcon, ZapIcon } from "lucide-react";
 
 type Deal = {
   id: number;
@@ -91,8 +91,11 @@ export function FlashDealsSection() {
             Flash Deals
           </h2>
         </div>
-        <button className="text-sm font-medium text-primary-1 hover:underline flex items-center gap-1">
-          View all <span className="text-xs">›</span>
+        <button className="text-sm font-medium text-primary hover:text-chart-1 hover:underline hover:cursor-pointer flex items-center gap-1">
+          View all{" "}
+          <span className="text-xs">
+            <ArrowRightIcon className="h-4 w-4" />
+          </span>
         </button>
       </div>
 
@@ -158,8 +161,8 @@ export function FlashDealsSection() {
           </CarouselContent>
 
           {/* Nav arrows, vertically centered on first / last card edges */}
-          <CarouselPrevious className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-10 w-10 rounded-2xl bg-slate-900 text-white shadow-lg hover:bg-slate-800 hover:cursor-pointer" />
-          <CarouselNext className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 h-10 w-10 rounded-2xl bg-slate-900 text-white shadow-lg hover:bg-slate-800 hover:cursor-pointer" />
+          <CarouselPrevious className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-10 w-10 rounded-2xl bg-slate-900 text-white shadow-lg hover:cursor-pointer" />
+          <CarouselNext className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 h-10 w-10 rounded-2xl bg-slate-900 text-white shadow-lg hover:cursor-pointer" />
         </Carousel>
       </div>
     </section>
