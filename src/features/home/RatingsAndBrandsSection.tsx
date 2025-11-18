@@ -22,24 +22,24 @@ type BrandItem = {
 const TOP_RATINGS: RatingItem[] = [
   {
     id: 1,
-    name: "Camera",
-    image: "/top-ratings/camera.webp",
+    name: "Camera Glass",
+    image: "/top-ratings/camera-glass.webp",
     price: "$3,300.00",
     rating: 4,
     reviews: 12,
   },
   {
     id: 2,
-    name: "Shoe",
-    image: "/top-ratings/shoe.webp",
+    name: "Watch",
+    image: "/top-ratings/watch-2.webp",
     price: "$400.00",
     rating: 4,
     reviews: 12,
   },
   {
     id: 3,
-    name: "Phone",
-    image: "/top-ratings/phone.webp",
+    name: "Sunglasses",
+    image: "/top-ratings/sunglasses.webp",
     price: "$999.00",
     rating: 4,
     reviews: 12,
@@ -58,12 +58,12 @@ const FEATURED_BRANDS: BrandItem[] = [
   {
     id: 1,
     name: "London Britches",
-    image: "/brands/brand-1.webp",
+    image: "/brands/watch-1.webp",
   },
   {
     id: 2,
     name: "Jim & Jago",
-    image: "/brands/brand-2.webp",
+    image: "/brands/watch-1.webp",
   },
 ];
 
@@ -162,12 +162,12 @@ export function FeaturedBrandsPanel() {
       </div>
 
       {/* Card with brand tiles */}
-      <Card className="rounded-3xl border border-slate-100 bg-white shadow-[0_12px_30px_rgba(15,23,42,0.04)]">
-        <CardContent className="p-5 md:p-6">
+      <Card>
+        <CardContent className="py-1">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {FEATURED_BRANDS.map((brand) => (
               <div key={brand.id} className="flex flex-col">
-                <div className="relative mb-3 w-full overflow-hidden rounded-2xl aspect-4/3">
+                <div className="relative mb-3 border w-full overflow-hidden rounded-2xl aspect-4/3 h-48">
                   <Image
                     src={brand.image}
                     alt={brand.name}
