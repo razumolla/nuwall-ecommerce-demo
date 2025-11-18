@@ -64,7 +64,7 @@ export function HeroSection() {
   );
 
   return (
-    <section className="mx-auto max-w-7xl px-4 md:px-10 2xl:px-0 md:pt-6 md:pb-3 relative">
+    <section className="mx-auto max-w-7xl px-4 py-5 relative">
       <div className="md:flex gap-6">
         {/* LEFT: hero slider (2/3 on md+) */}
         <div className="w-full md:w-2/3">

@@ -120,7 +120,7 @@ export function BigDiscountsSection() {
       {/* Slider + dots */}
       <div className="relative">
         <Carousel opts={{ align: "start" }} setApi={setApi} className="w-full">
-          <CarouselContent className="ml-4">
+          <CarouselContent className="-ml-4 px-2">
             {BIG_DISCOUNTS.map((product) => (
               <CarouselItem
                 key={product.id}
