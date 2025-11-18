@@ -32,21 +32,21 @@ const BIG_DISCOUNTS: DiscountProduct[] = [
   {
     id: 2,
     name: "Ranasonic 2019",
-    image: "/discounts/ranasonic-2019.webp",
+    image: "/discounts/panasonic-2019.webp",
     price: "$124.67",
     oldPrice: "$137.00",
   },
   {
     id: 3,
-    name: "Pune HD",
-    image: "/discounts/pune-hd.webp",
+    name: "Dune HD",
+    image: "/discounts/dune-hd.webp",
     price: "$105.45",
     oldPrice: "$111.00",
   },
   {
     id: 4,
-    name: "Tony CCTV",
-    image: "/discounts/tony-cctv.webp",
+    name: "Sony CCTV",
+    image: "/discounts/Sony-cctv.webp",
     price: "$139.50",
     oldPrice: "$150.00",
   },
@@ -59,22 +59,22 @@ const BIG_DISCOUNTS: DiscountProduct[] = [
   },
   {
     id: 6,
-    name: "Tony TV 1080p",
-    image: "/discounts/tony-tv-1080p.webp",
+    name: "Sony TV 1080p",
+    image: "/discounts/sony-tv-1080p.webp",
     price: "$258.54",
     oldPrice: "$278.00",
   },
   {
     id: 7,
-    name: "Tony TV 1080p",
-    image: "/discounts/tony-tv-1080p.webp",
+    name: "Netgear 2025",
+    image: "/discounts/netgear2025.webp",
     price: "$258.54",
     oldPrice: "$278.00",
   },
   {
     id: 8,
-    name: "Tony TV 1080p",
-    image: "/discounts/tony-tv-1080p.webp",
+    name: "Sony PS4",
+    image: "/discounts/sonyPS4.webp",
     price: "$258.54",
     oldPrice: "$278.00",
   },
@@ -120,16 +120,16 @@ export function BigDiscountsSection() {
       {/* Slider + dots */}
       <div className="relative">
         <Carousel opts={{ align: "start" }} setApi={setApi} className="w-full">
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="ml-4">
             {BIG_DISCOUNTS.map((product) => (
               <CarouselItem
                 key={product.id}
-                className="pl-4 basis-[260px] sm:basis-1/2 lg:basis-1/3 xl:basis-1/6"
+                className="pl-4 p-2 basis-[260px] sm:basis-1/2 lg:basis-1/3 xl:basis-1/6  hover:scale-102 transition"
               >
-                <Card className="h-full rounded-3xl border border-slate-100 bg-white shadow-[0_12px_30px_rgba(15,23,42,0.04)]">
-                  <CardContent className="flex h-full flex-col p-6">
+                <Card>
+                  <CardContent>
                     {/* image area */}
-                    <div className="mb-6 flex h-36 items-center justify-center rounded-2xl bg-slate-50">
+                    <div className="mb-6 flex h-36 items-center justify-center rounded-2xl scale-120">
                       <Image
                         src={product.image}
                         alt={product.name}
