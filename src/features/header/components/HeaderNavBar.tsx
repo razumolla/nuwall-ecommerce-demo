@@ -21,12 +21,22 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const NAV_LINKS = [
-  "Home",
-  "Pages",
-  "User Account",
-  "Vendor Account",
-  "Track My Orders",
-  "Back to Demos",
+  {
+    href: "/",
+    name: "Home",
+  },
+  {
+    href: "/",
+    name: "User Account",
+  },
+  {
+    href: "/",
+    name: "Vendor Account",
+  },
+  {
+    href: "/track-my-orders",
+    name: "Track My Orders",
+  },
 ];
 
 type Column = { title: string; items: string[] };
@@ -184,9 +194,9 @@ export function HeaderNavBar() {
 
           {/* Main nav links */}
           <nav className="flex flex-1 items-center justify-end gap-7 text-[13px] font-medium  text-slate-600">
-            {NAV_LINKS.map((item) => (
-              <Link key={item} href="/" className="hover:text-[#FF6A3D]">
-                {item}
+            {NAV_LINKS.map((item, idx) => (
+              <Link key={idx} href={item.href} className="hover:text-[#FF6A3D]">
+                {item.name}
               </Link>
             ))}
           </nav>
