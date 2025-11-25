@@ -1,4 +1,4 @@
-import TrackOrderMap from "@/features/track-order/TrackOrderMap";
+import TrackOrderMap from "@/components/track-order/TrackOrderMap";
 
 const TrackMyOrdersPage = () => {
   return <TrackOrderMap />;

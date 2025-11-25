@@ -12,8 +12,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 
-const TOP_BG = "#0F3460";
-
 const LANGS = [
   {
     code: "BN",
@@ -36,7 +34,7 @@ export function HeaderTopBar() {
   const [activeLang, setActiveLang] = useState(LANGS[0]);
 
   return (
-    <div className="w-full" style={{ backgroundColor: TOP_BG }}>
+    <div className="w-full bg-[#0F3460]">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-[11px] text-slate-100">
         {/* Left: phone + email */}
         <div className="flex items-center gap-5">

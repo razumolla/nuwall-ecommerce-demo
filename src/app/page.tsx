@@ -1,12 +1,12 @@
-import { HeroSection } from "@/features/hero";
-import { BigDiscountsSection } from "@/features/home/BigDiscountsSection";
-import { DualPromoBanners } from "@/features/home/DualPromoBanners";
-import { FlashDealsSection } from "@/features/home/FlashDealsSection";
-import { MoreForYouSection } from "@/features/home/MoreForYouSection";
-import { NewArrivalsSection } from "@/features/home/NewArrivalsSection";
-import { RatingsAndBrandsSection } from "@/features/home/RatingsAndBrandsSection";
-import { ServiceHighlights } from "@/features/home/ServiceHighlights";
-import { TopCategoriesSection } from "@/features/home/TopCategoriesSection";
+import { HeroSection } from "@/components/hero";
+import { BigDiscountsSection } from "@/components/home/BigDiscountsSection";
+import { DualPromoBanners } from "@/components/home/DualPromoBanners";
+import { FlashDealsSection } from "@/components/home/FlashDealsSection";
+import { MoreForYouSection } from "@/components/home/MoreForYouSection";
+import { NewArrivalsSection } from "@/components/home/NewArrivalsSection";
+import { RatingsAndBrandsSection } from "@/components/home/RatingsAndBrandsSection";
+import { ServiceHighlights } from "@/components/home/ServiceHighlights";
+import { TopCategoriesSection } from "@/components/home/TopCategoriesSection";
 
 export default function HomePage() {
   return (

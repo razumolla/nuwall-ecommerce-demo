@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Autocomplete,
   DirectionsRenderer,
@@ -160,7 +160,7 @@ export function TrackOrderMap() {
         if (prev >= routePath.length - 1) return prev; // stop at end
         return prev + 1;
       });
-    }, 300); // speed
+    }, 1000); // speed
 
     return () => window.clearInterval(interval);
   }, [routePath]);
