@@ -5,9 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "bonik-react.vercel.app",
-        port: "",
-        pathname: "/**",
+        hostname: "*", // Allow images from all domains
       },
     ],
   },

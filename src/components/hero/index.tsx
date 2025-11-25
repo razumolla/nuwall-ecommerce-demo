@@ -64,7 +64,7 @@ export function HeroSection() {
   );
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-5 relative">
+    <section className="relative mx-auto max-w-7xl px-4 py-5">
       <div className="md:flex gap-6">
         {/* LEFT: hero slider (2/3 on md+) */}
         <div className="w-full md:w-2/3">
@@ -74,32 +74,30 @@ export function HeroSection() {
             onMouseEnter={autoplay.current.stop}
             onMouseLeave={autoplay.current.reset}
           >
-            {/* remove default gutter: -ml-0 */}
             <CarouselContent className="ml-0">
               {HERO_SLIDES.map((slide) => (
-                // remove default pl-4 on items: pl-0
                 <CarouselItem key={slide.id} className="w-full pl-0">
                   <Card className="border-none bg-transparent shadow-none">
                     <CardContent className="p-0">
-                      <div className="relative w-full aspect-[2.5/1] md:rounded-[15px] overflow-hidden">
-                        <Link href={slide.href}>
-                          <Image
-                            src={slide.backgroundImage}
-                            alt="Hero banner"
-                            fill
-                            priority
-                            className="object-cover"
-                          />
-                        </Link>
+                      {/* Make the Link the relative parent for the fill Image */}
+                      <Link
+                        href={slide.href}
+                        className="relative block w-full aspect-[2.5/1] overflow-hidden md:rounded-[15px]"
+                      >
+                        <Image
+                          src={slide.backgroundImage}
+                          alt="Hero banner"
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
 
-                        <div className="absolute bottom-8 md:bottom-14 left-6 md:left-8">
-                          <Link href={slide.href}>
-                            <button className="rounded-full bg-white px-3 md:px-8 py-1 md:py-2 text-[12px] md:text-[20px] font-medium text-[#252525] hover:cursor-pointer hover:text-blue-400 ">
-                              Buy Now
-                            </button>
-                          </Link>
+                        <div className="absolute bottom-8 left-6 md:bottom-14 md:left-8">
+                          <button className="rounded-full bg-white px-3 md:px-8 py-1 md:py-2 text-[12px] md:text-[20px] font-medium text-[#252525] hover:cursor-pointer hover:text-blue-400">
+                            Buy Now
+                          </button>
                         </div>
-                      </div>
+                      </Link>
                     </CardContent>
                   </Card>
                 </CarouselItem>
@@ -121,10 +119,11 @@ export function HeroSection() {
                 alt={`Promotion banner ${idx + 1}`}
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
 
               <div className="absolute bottom-6 left-4">
-                <button className="rounded-full bg-white px-4 py-1 text-base font-medium text-[#252525] hover:cursor-pointer hover:text-blue-400 ">
+                <button className="rounded-full bg-white px-4 py-1 text-base font-medium text-[#252525] hover:cursor-pointer hover:text-blue-400">
                   Order Now
                 </button>
               </div>

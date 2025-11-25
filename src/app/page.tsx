@@ -2,7 +2,7 @@ import { HeroSection } from "@/components/hero";
 import { BigDiscountsSection } from "@/components/home/BigDiscountsSection";
 import { DualPromoBanners } from "@/components/home/DualPromoBanners";
 import { FlashDealsSection } from "@/components/home/FlashDealsSection";
-import { MoreForYouSection } from "@/components/home/MoreForYouSection";
+import ProductsSection from "@/components/home/ProductsSection";
 import { NewArrivalsSection } from "@/components/home/NewArrivalsSection";
 import { RatingsAndBrandsSection } from "@/components/home/RatingsAndBrandsSection";
 import { ServiceHighlights } from "@/components/home/ServiceHighlights";
@@ -18,7 +18,7 @@ export default function HomePage() {
       <NewArrivalsSection />
       <BigDiscountsSection />
       <DualPromoBanners />
-      <MoreForYouSection />
+      <ProductsSection />
       <ServiceHighlights />
     </div>
   );
