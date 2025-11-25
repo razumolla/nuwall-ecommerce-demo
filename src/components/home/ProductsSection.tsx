@@ -11,17 +11,13 @@ import type { Product } from "@/types";
 
 // SSR fetch
 async function getProducts(): Promise<Product[]> {
-  const res = await fetch("https://api.escuelajs.co/api/v1/products", {
-    next: { revalidate: 3600 }, // revalidate every hour
-  });
+  const res = await fetch("https://api.escuelajs.co/api/v1/products");
 
   if (!res.ok) {
     throw new Error("Failed to fetch products");
   }
 
   const data: Product[] = await res.json();
-
-  console.log("Fetched products:", data.length);
   return data;
 }
 

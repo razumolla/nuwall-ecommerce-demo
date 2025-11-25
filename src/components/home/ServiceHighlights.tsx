@@ -5,7 +5,7 @@ import { Truck, CreditCard, ShieldCheck, Headphones } from "lucide-react";
 const FEATURES = [
   {
     id: 1,
-    label: "World Wide Delivery",
+    label: "Fast Delivery",
     icon: Truck,
   },
   {
@@ -34,7 +34,7 @@ export function ServiceHighlights() {
           return (
             <div
               key={item.id}
-              className="flex h-48 flex-col items-center justify-center rounded-xl text-center shadow-sm"
+              className="flex h-40 flex-col items-center justify-center rounded-xl text-center shadow-sm"
             >
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-slate-50">
                 <Icon className="h-8 w-8 text-[#0F3460]" />
