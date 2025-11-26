@@ -5,26 +5,22 @@ const PIWALL_API_BASE_URL =
 
 const PIWALL_JWT = process.env.PIWALL_JWT_GRANDEUR;
 
-export async function getGrandeurProductsSSR(
-  limit = 20,
-  offset = 0
-): Promise<PiWallProduct[]> {
+// generic helper for PiWall SSR calls
+async function piwallFetchSSR<T = unknown>(
+  path: string,
+  params: Record<string, string | number> = {}
+): Promise<T> {
   if (!PIWALL_JWT) {
-    console.warn("PIWALL_JWT_GRANDEUR is not set");
-    return [];
+    throw new Error("PIWALL_JWT_GRANDEUR is not set");
   }
 
-  // 👇 Build the exact endpoint: /api/piwall/products
-  const url = new URL("/api/piwall/products", PIWALL_API_BASE_URL);
-  url.searchParams.set("view_mode", "lite");
-  url.searchParams.set("goods_only", "true");
-  url.searchParams.set("purchased_collections_only", "true");
-  url.searchParams.set("limit", String(limit));
-  url.searchParams.set("offset", String(offset));
+  const url = new URL(path, PIWALL_API_BASE_URL);
+  Object.entries(params).forEach(([key, value]) => {
+    url.searchParams.set(key, String(value));
+  });
 
-  // (optional) log to verify during dev
   if (process.env.NODE_ENV === "development") {
-    console.log("[getGrandeurProducts] Fetching:", url.toString());
+    console.log("[piwallFetchSSR] Fetching:", url.toString());
   }
 
   const res = await fetch(url.toString(), {
@@ -38,19 +34,31 @@ export async function getGrandeurProductsSSR(
 
   if (!res.ok) {
     const text = await res.text();
-    console.error(
-      "Failed to fetch PiWall products:",
-      res.status,
-      res.statusText,
-      text
-    );
-    return [];
+    console.error("[piwallFetchSSR] Failed:", res.status, res.statusText, text);
+    throw new Error(`PiWall SSR request failed: ${res.status}`);
   }
 
-  const json = (await res.json()) as PiWallProductsResponse;
+  return (await res.json()) as T;
+}
 
-  if (json.status !== "success") {
-    console.error("PiWall API returned non-success status:", json.status);
+// specific: Grandeur products (SSR)
+export async function getGrandeurProductsSSR(
+  limit = 20,
+  offset = 0
+): Promise<PiWallProduct[]> {
+  const json = await piwallFetchSSR<PiWallProductsResponse>(
+    "/api/piwall/products",
+    {
+      view_mode: "lite",
+      goods_only: "true",
+      purchased_collections_only: "true",
+      limit,
+      offset,
+    }
+  );
+
+  if (json.status !== "success" || !Array.isArray(json.data)) {
+    console.error("[getGrandeurProductsSSR] Non-success status:", json.status);
     return [];
   }
 

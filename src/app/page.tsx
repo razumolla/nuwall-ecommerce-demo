@@ -21,7 +21,7 @@ export default function HomePage() {
       {/* <BigDiscountsSection /> */}
       {/* <DualPromoBanners /> */}
       {/* <ProductsSection /> */}
-      <GrandeurProductsSection />
+      <GrandeurProductsSection /> {/* SSR */}
       {/* <RatingsAndBrandsSection /> */}
       <ServiceHighlights />
     </div>
