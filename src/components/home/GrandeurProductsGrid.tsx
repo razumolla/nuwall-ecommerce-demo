@@ -1,4 +1,3 @@
-// src/components/home/GrandeurProductsGrid.tsx
 import Image from "next/image";
 import { StarIcon } from "lucide-react";
 import type { PiWallProduct } from "@/types";
@@ -32,7 +31,7 @@ export function GrandeurProductsGrid({ products }: Props) {
 
             <div className="relative aspect-3/4 w-full">
               <Image
-                src={product.main_image}
+                src={product.main_image ?? "/offer-1.webp"}
                 alt={product.name || "Product image"}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"

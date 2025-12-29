@@ -281,7 +281,6 @@ export function HeaderNavBar() {
                     </div>
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center">
                       <div className="relative h-28 w-40">
-                        {/* demo image; replace with your own */}
                         <Image
                           src="/offer-1.webp"
                           alt="Promo"

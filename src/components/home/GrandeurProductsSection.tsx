@@ -1,4 +1,3 @@
-// src/components/home/GrandeurProductsSection.tsx
 import Link from "next/link";
 import { ChevronRightIcon, PaletteIcon } from "lucide-react";
 import { getGrandeurProductsSSR } from "@/lib/api.ssr";

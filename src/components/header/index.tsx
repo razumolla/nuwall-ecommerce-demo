@@ -4,7 +4,7 @@ import { HeaderNavBar } from "./components/HeaderNavBar";
 
 export function Header() {
   return (
-    <header className="shadow-sm">
+    <header className="shadow-sm ">
       <HeaderTopBar />
       <HeaderMainBar />
       <HeaderNavBar />
